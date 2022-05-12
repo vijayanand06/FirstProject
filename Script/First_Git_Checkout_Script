@@ -1,0 +1,24 @@
+pipeline {
+	stages {
+		stage('Initialization') {
+			failFast true
+			parallel {
+				stage('Checkout') {
+					steps {
+					    cleanWs()
+						checkout([$class: 'GitSCM',
+							branches: [[name: "origin/master"]],
+							doGenerateSubmoduleConfigurations: false,
+							extensions: [[$class: 'LocalBranch']],
+							submoduleCfg: [],
+							userRemoteConfigs: [[
+								credentialsId: 'FirstGithub',
+								url: 'https://github.com/vijayanand06/FirstProject.git'
+							]]
+						])
+					}
+				}
+			}
+		}
+	}
+}
