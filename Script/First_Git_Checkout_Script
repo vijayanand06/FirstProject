@@ -27,9 +27,9 @@ pipeline {
 					steps{
 						bat 'python first.py'
 					}
-				stage('second py){
+				stage('second py'){
 					steps{
-					bat 'python second.py'
+						bat 'python second.py'
 					}
 				}
 				}
