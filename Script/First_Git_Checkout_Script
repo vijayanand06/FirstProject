@@ -22,8 +22,17 @@ pipeline {
 			}
 		}
 		stage ('Run Python'){
-			steps{
-					bat 'python first.py'
+			parallel {
+				stage('first py'){
+					steps{
+						bat 'python first.py'
+					}
+				stage('second py){
+					steps{
+					bat 'python second.py'
+					}
+				}
+				}
 			}
 		}
 	}
