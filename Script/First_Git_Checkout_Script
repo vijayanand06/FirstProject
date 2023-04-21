@@ -23,7 +23,7 @@ pipeline {
 		}
 		stage ('Run Python'){
 			steps{
-					sh 'python first.py'
+					sh 'python \Robotsample\customelib\first.py'
 			}
 		}
 	}
