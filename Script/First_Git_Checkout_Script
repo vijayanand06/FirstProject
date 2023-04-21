@@ -21,5 +21,10 @@ pipeline {
 				}
 			}
 		}
+		stage ('Run Python'){
+			steps{
+					sh 'python first.py'
+			}
+		}
 	}
 }
